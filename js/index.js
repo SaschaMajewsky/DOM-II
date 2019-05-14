@@ -108,7 +108,20 @@ backgroundElements[2].addEventListener('click', (event) => {
 // wihtout a propagation stop the click on the button will bubble back to the .destination evenListener and return red instead of green
 const buttons = document.querySelectorAll('.btn')
 buttons[2].addEventListener('click', (event) => {
-   event.target.style.backgroundColor = "green";
-   // with a stopPropagation the button will turn green as the event will not be bubbled upwards in the Node Chain to the destination evenListener.
-   event.stopPropagation();
+    event.target.style.backgroundColor = "green";
+    // with a stopPropagation the button will turn green as the event will not be bubbled upwards in the Node Chain to the destination evenListener.
+    event.stopPropagation();
 });
+
+//GSAP 
+const copyright = document.querySelector('.copyright')
+
+copyright.addEventListener('mouseover', (event) => {
+    event.target.style.color = "red"
+    TweenMax.to('.copyright', 1, {scaleY: 1.5, height: '10vw', delay: 1, ease: Circ.easeOut}) 
+    TweenMax.to('.copyright', 1, {scaleY: 1.5, width: '10vw', delay: 2, ease: Circ.easeOut}) 
+    TweenMax.to('.copyright', 1, {scaleY: 1.5, height: '200vw', delay: 3, ease: Circ.easeOut}) 
+    TweenMax.to('.copyright', 1, {scaleY: 1.5, width: '-100vw', delay: 4, ease: Circ.easeOut}) 
+    TweenMax.to('.copyright', 1, {scaleY: 1.5, height: '100vw', delay: 5, ease: Circ.easeOut}) 
+    TweenMax.to('.copyright', 1, {scaleY: 1, height: '20vw', width: '100vw', delay: 6, ease: Circ.easeOut}) 
+})
