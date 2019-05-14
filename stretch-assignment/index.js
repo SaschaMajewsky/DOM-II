@@ -8,7 +8,7 @@ boxes.forEach((element) => {
     element.addEventListener('mouseover', (event) => {
             test = setInterval(function() {
             // Do something every 5 seconds
-            event.target.style.marginLeft= parseInt(event.target.style.marginLeft||0) + 20 + "px";
+            event.target.style.marginLeft= parseInt(event.target.style.marginLeft||0) + 5 + "px";
       }, 29);
         
     });
